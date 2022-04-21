@@ -28,8 +28,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.jena.JenaRuntime;
-import org.apache.jena.ext.com.google.common.cache.Cache;
-import org.apache.jena.ext.com.google.common.cache.CacheBuilder;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -76,7 +76,7 @@ public class LPBRuleEngine {
      *  This is here so that partial goal state can be shared across multiple queries.
      *
      *  Note: Do no expose as protected/public, as this depends on
-     *  the shadowed org.apache.jena.ext.com.google.common.*
+     *  the shadowed com.google.common.*
      *
      *  Older Jena versions used weak references here.
      *  If necessary that could be reinstated by adding .weakValues() in the build chain.

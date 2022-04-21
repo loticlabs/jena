@@ -26,7 +26,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collector;
 
-import org.apache.jena.ext.com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableSet;
 
 public interface IdentityFinishCollector<T, A> extends Collector<T, A, A> {
 

@@ -19,7 +19,7 @@ package org.apache.jena.query;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.jena.ext.com.google.common.base.Stopwatch;
+import com.google.common.base.Stopwatch;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.sparql.engine.binding.BindingFactory;
 import org.apache.jena.sparql.syntax.ElementData;

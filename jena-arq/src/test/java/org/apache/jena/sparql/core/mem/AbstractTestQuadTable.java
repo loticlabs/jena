@@ -19,7 +19,7 @@
 package org.apache.jena.sparql.core.mem;
 
 import static java.util.EnumSet.allOf;
-import static org.apache.jena.ext.com.google.common.collect.Sets.powerSet;
+import static com.google.common.collect.Sets.powerSet;
 import static org.apache.jena.graph.NodeFactory.createURI;
 
 import java.util.Set;

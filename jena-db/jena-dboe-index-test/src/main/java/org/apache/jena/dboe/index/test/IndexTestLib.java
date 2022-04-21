@@ -37,7 +37,7 @@ import org.apache.jena.dboe.base.record.Record;
 import org.apache.jena.dboe.index.Index;
 import org.apache.jena.dboe.index.RangeIndex;
 import org.apache.jena.dboe.test.RecordLib;
-import org.apache.jena.ext.com.google.common.primitives.Ints;
+import com.google.common.primitives.Ints;
 import org.junit.Assert;
 
 public class IndexTestLib {

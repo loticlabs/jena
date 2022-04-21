@@ -21,8 +21,8 @@ package org.apache.jena.shex.eval;
 import java.util.*;
 
 import org.apache.jena.atlas.lib.InternalErrorException;
-import org.apache.jena.ext.com.google.common.collect.ArrayListMultimap;
-import org.apache.jena.ext.com.google.common.collect.ListMultimap;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.ListMultimap;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.shex.expressions.TripleExpression;

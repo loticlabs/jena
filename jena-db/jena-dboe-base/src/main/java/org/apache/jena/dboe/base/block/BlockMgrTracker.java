@@ -35,8 +35,8 @@ import java.util.List;
 
 import org.apache.jena.atlas.lib.Pair;
 import org.apache.jena.dboe.DBOpEnvException;
-import org.apache.jena.ext.com.google.common.collect.HashMultiset;
-import org.apache.jena.ext.com.google.common.collect.Multiset;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -19,7 +19,7 @@
 package org.apache.jena.atlas.lib.persistent;
 
 import static java.util.stream.Collectors.toSet;
-import static org.apache.jena.ext.com.google.common.collect.Sets.newHashSet;
+import static com.google.common.collect.Sets.newHashSet;
 
 import org.junit.Assert;
 import org.junit.Test;

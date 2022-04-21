@@ -21,7 +21,7 @@ package org.apache.jena.query.text;
 import java.util.Set ;
 
 import org.apache.jena.atlas.lib.StrUtils ;
-import org.apache.jena.ext.com.google.common.collect.Sets ;
+import com.google.common.collect.Sets ;
 import org.junit.Before ;
 import org.junit.Test ;
 
