@@ -20,7 +20,13 @@ package org.apache.jena.reasoner.rulesys;
 
 import java.io.*;
 import java.util.* ;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import org.apache.jena.datatypes.RDFDatatype ;
 import org.apache.jena.datatypes.TypeMapper ;
 import org.apache.jena.datatypes.xsd.XSDDatatype ;
@@ -551,23 +557,29 @@ public class Rule implements ClauseEntry {
                } else if (line.startsWith("@include")) {
                    // Include referenced rule file, either URL or local special case
                    line = line.substring("@include".length());
-                   String url = extractURI(line);
+
+                   // Extract the @include arguments
+                   Include include = extractInclude(line);
+                   if (include == null) {
+                       throw new IllegalArgumentException("@include directive is missing a valid URL");
+                   }
+
                    // Check for predefined cases
-                   if (url.equalsIgnoreCase("rdfs")) {
+                   if (include.uri.equalsIgnoreCase("rdfs")) {
+                       include.requireFalse();
                        preloadedRules.addAll( RDFSFBRuleReasoner.loadRules() );
-
-                   } else if (url.equalsIgnoreCase("owl")) {
+                   } else if (include.uri.equalsIgnoreCase("owl")) {
+                       include.requireFalse();
                        preloadedRules.addAll( OWLFBRuleReasoner.loadRules() ) ;
-
-                   } else if (url.equalsIgnoreCase("owlmicro")) {
+                   } else if (include.uri.equalsIgnoreCase("owlmicro")) {
+                       include.requireFalse();
                        preloadedRules.addAll( OWLMicroReasoner.loadRules() ) ;
-
-                   } else if (url.equalsIgnoreCase("owlmini")) {
+                   } else if (include.uri.equalsIgnoreCase("owlmini")) {
                        preloadedRules.addAll( OWLMiniReasoner.loadRules() ) ;
-
                    } else {
                        // Just try loading as a URL
-                       preloadedRules.addAll( rulesFromURL(url) );
+                       BuiltinRegistry registryToUse = include.withBuiltins ? registry : BuiltinRegistry.theRegistry;
+                       preloadedRules.addAll( rulesFromURL(include.uri, registryToUse) );
                    }
 
                } else {
@@ -605,6 +617,44 @@ public class Rule implements ClauseEntry {
             token = token.substring(1, split);
         }
         return token;
+    }
+
+    private static final class Include {
+        final String uri;
+        final boolean withBuiltins;
+        Include(String uri, boolean withBuiltins) {
+            this.uri = uri;
+            this.withBuiltins = withBuiltins;
+        }
+        void requireFalse() {
+            Preconditions.checkArgument(!withBuiltins, "cannot use \"with builtins\" for predefined rules");
+        }
+    }
+
+    private static final Pattern INCLUDE_OPTIONS_REGEX = Pattern.compile("(?<word>(?![.#])\\S+)\\s*");
+
+    private static Include extractInclude(String lineSoFar) {
+        String uri, token;
+        boolean withBuiltins = false;
+        token = lineSoFar.trim();
+        if (token.startsWith("<")) {
+            int split = token.indexOf('>');
+            uri = token.substring(1, split);
+            String rest = token.substring(split + 1).trim();
+
+            // line ends in a comment or period
+            if (rest.startsWith(".") || rest.startsWith("//") || rest.startsWith("#")) {
+                return new Include(uri, false);
+            }
+
+            Matcher m = INCLUDE_OPTIONS_REGEX.matcher(rest);
+            List<String> words = m.results().map(r -> r.group(1)).collect(Collectors.toList());
+            if (words.equals(List.of("with", "builtins"))) {
+                withBuiltins = true;
+            }
+            return new Include(uri, withBuiltins);
+        }
+        return null;
     }
 
     /**

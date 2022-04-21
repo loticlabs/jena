@@ -1,0 +1,3 @@
+@prefix ex: <https://example.com/>
+
+rule1: -> customBuiltin(ex:B ex:p ex:A) .

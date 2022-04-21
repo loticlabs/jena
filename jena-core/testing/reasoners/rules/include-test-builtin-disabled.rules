@@ -1,0 +1,6 @@
+@prefix ex: <https://example.com/>
+
+rule0: -> customBuiltin(ex:A, ex:p, ex:foo) .
+
+# includes rule1 with unsatisfied dependency on customBuiltin
+@include <file:testing/reasoners/rules/include-test-builtin-sub.rules>.

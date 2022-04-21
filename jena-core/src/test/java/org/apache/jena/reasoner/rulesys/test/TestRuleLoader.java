@@ -18,19 +18,20 @@
 
 package org.apache.jena.reasoner.rulesys.test;
 
+import org.apache.jena.reasoner.ReasonerException;
 import org.apache.jena.reasoner.rulesys.BuiltinRegistry;
 import org.apache.jena.reasoner.rulesys.MapBuiltinRegistry;
-import org.apache.jena.reasoner.rulesys.Rule;
+import org.apache.jena.reasoner.rulesys.Rule ;
 import org.apache.jena.reasoner.rulesys.builtins.BaseBuiltin;
-import org.apache.jena.shared.RulesetNotFoundException;
-import org.apache.jena.shared.WrappedIOException;
+import org.apache.jena.shared.RulesetNotFoundException ;
+import org.apache.jena.shared.WrappedIOException ;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
 
 /**
  * Tests for the rule loader
@@ -73,5 +74,30 @@ public class TestRuleLoader  {
         BuiltinRegistry br = createBuiltinRegistry();
         List<Rule> rules = Rule.rulesFromURL("testing/reasoners/bugs/custom-builtins.rules", br);
         assertEquals(List.of("ruleWithBuiltin"), rules.stream().map(Rule::getName).collect(Collectors.toList()));
+    }
+
+    /**
+     * Test that the default behavior of included rules is for builtins to *NOT* be shared.
+     */
+    @Test
+    public void load_from_file_with_include_and_unshared_builtins() {
+        BuiltinRegistry br = createBuiltinRegistry();
+        List<Rule> rules = Rule.rulesFromURL("testing/reasoners/rules/include-test-builtin-sub.rules", br);
+        assertEquals(List.of("rule1"), rules.stream().map(Rule::getName).collect(Collectors.toList()));
+        ReasonerException e = assertThrows(ReasonerException.class,
+                () -> Rule.rulesFromURL("testing/reasoners/rules/include-test-builtin-disabled.rules", br));
+        assertEquals("(allMonotonic) Undefined Functor customBuiltin in rule1" , e.getMessage());
+    }
+
+    /**
+     * Test that using the "with builtins" clause for an @import will use the builtin registry passed to the parser.
+     */
+    @Test
+    public void load_from_file_with_include_and_shared_builtins() {
+        BuiltinRegistry br = createBuiltinRegistry();
+        List<Rule> rules = Rule.rulesFromURL("testing/reasoners/rules/include-test-builtin-sub.rules", br);
+        assertEquals(List.of("rule1"), rules.stream().map(Rule::getName).collect(Collectors.toList()));
+        rules = Rule.rulesFromURL("testing/reasoners/rules/include-test-builtin-enabled.rules", br);
+        assertEquals(Set.of("rule0", "rule1"), rules.stream().map(Rule::getName).collect(Collectors.toUnmodifiableSet()));
     }
 }

@@ -1,0 +1,6 @@
+@prefix ex: <https://example.com/>
+
+rule0: -> (ex:A ex:p ex:foo) .
+
+@include <file:testing/reasoners/rules/ruleset1.rules>.   # includes rule1
+@include <file:testing/reasoners/rules/ruleset2.rules>.   # includes rule2
