@@ -21,7 +21,7 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena-fuseki</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>../</relativePath>
   </parent>
 
@@ -32,29 +32,25 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-core</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-core</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
     
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
     </dependency>
    
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-text</artifactId>
-      <version>4.5.0</version>
     </dependency>
     
     <dependency>
@@ -73,11 +69,13 @@
     </dependency>
 
     <!-- frontend assets (HTML, JS, CSS, images, etc.) -->
+    <!-- Currently done by unpacking.
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-fuseki-ui</artifactId>
       <version>${project.version}</version>
     </dependency>
+    -->
 
     <!-- Logging  -->  
     <dependency>
@@ -93,17 +91,15 @@
 
     <!-- Testing -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-base</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
@@ -189,6 +185,27 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>jena-fuseki-ui</artifactId>
+                  <type>jar</type>
+                  <outputDirectory>${project.build.directory}</outputDirectory>
+                  <includes>webapp/**/*.*</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+
         <configuration>
           <overWriteReleases>false</overWriteReleases>
           <overWriteIfNewer>true</overWriteIfNewer>
@@ -206,8 +223,4 @@
     </plugins>
 
   </build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

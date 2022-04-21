@@ -29,7 +29,7 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -43,106 +43,99 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>apache-jena-libs</artifactId>
-      <version>4.5.0</version>
       <type>pom</type>
     </dependency>
 
     <!-- Modules that have tests here -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-rdfconnection</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-rdfconnection</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-geosparql</artifactId>
-      <version>4.5.0</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-main</artifactId>
-      <version>4.5.0</version>
     </dependency>
     
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-core</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
     
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-main</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>jena-text</artifactId>
     </dependency>
 
     <!-- The test artifacts to go with apache-jena-libs -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-base</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-dboe-index-test</artifactId>
-      <version>4.5.0</version>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-dboe-trans-data</artifactId>
-      <version>4.5.0</version>
+      <version>${project.version}</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
     
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-core</artifactId>
       <classifier>tests</classifier>
-      <version>4.5.0</version>
       <scope>test</scope>
     </dependency>    
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>

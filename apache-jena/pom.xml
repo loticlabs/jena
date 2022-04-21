@@ -35,7 +35,7 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -56,79 +56,68 @@
       Enumerate dependencies explicitly to get source as well.
     -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-core</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-core</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-rdfconnection</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-rdfconnection</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-shacl</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-shacl</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-shex</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-shex</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <!-- Require a logging implementation for command line tools --> 
@@ -139,9 +128,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
       <classifier>sources</classifier>
       <optional>true</optional>
     </dependency>

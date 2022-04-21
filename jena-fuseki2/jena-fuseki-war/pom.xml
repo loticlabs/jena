@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena-fuseki</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent> 
 
@@ -35,17 +35,17 @@
 
     <!-- backend servlets, filters (CORS, Shiro, etc.) -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-webapp</artifactId>
-      <version>${project.version}</version>
     </dependency>
 
     <!-- frontend assets (HTML, JS, CSS, images, etc.) -->
+    <!-- Currently done by unpacking in jena-fuseki-webapp
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-fuseki-ui</artifactId>
-      <version>${project.version}</version>
     </dependency>
+    -->
 
     <!-- Require a logging implementation -->
     <dependency>
@@ -104,8 +104,5 @@
     </plugins>
 
   </build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
+  
 </project>

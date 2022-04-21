@@ -21,13 +21,12 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent> 
 
   <name>Apache Jena - Fuseki - A SPARQL 1.1 Server</name>
   <artifactId>jena-fuseki</artifactId>
-  <version>4.5.0</version>
 
   <description>Fuseki is a SPARQL 1.1 Server which provides the SPARQL query, 
   SPARQL update and SPARQL graph store protocols.
@@ -79,5 +78,42 @@
     <!-- Binary distribution -->
     <module>apache-jena-fuseki</module>
   </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-core</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-access</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-webapp</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-war</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-fulljar</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   
 </project>

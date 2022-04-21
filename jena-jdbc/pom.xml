@@ -19,9 +19,7 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.jena</groupId>
 	<artifactId>jena-jdbc</artifactId>
-	<version>4.5.0</version>
 	<packaging>pom</packaging>
 	<name>Apache Jena - JDBC Parent</name>
 	<description>This is the parent module for the Jena JDBC modules.  These modules provide JDBC Type 4 drivers for in-memory and TDB datasets as well as remote SPARQL endpoints.</description>
@@ -29,7 +27,7 @@
 	<parent>
 		<groupId>org.apache.jena</groupId>
 		<artifactId>jena</artifactId>
-		<version>4.5.0</version>
+		<version>${revision}${sha1}${changelist}</version>
 		<relativePath>..</relativePath>
 	</parent>
 
@@ -52,6 +50,55 @@
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-slf4j-impl</artifactId>
 				<version>${ver.log4j2}</version>
+			</dependency>
+			<!-- modules -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-core</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-mem</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-mem</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-remote</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-remote</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-tdb</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jena-jdbc-driver-tdb</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -23,12 +23,12 @@
   <artifactId>jena</artifactId>
   <packaging>pom</packaging>
   <url>https://jena.apache.org/</url>
-  <version>4.5.0</version>
+  <version>${revision}${sha1}${changelist}</version>
 
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>26</version>
+    <version>27</version>
   </parent>
 
   <licenses>
@@ -47,17 +47,22 @@
     <connection>scm:git:https://gitbox.apache.org/repos/asf/jena.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/jena.git</developerConnection>
     <url>https://gitbox.apache.org/repos/asf/jena.git</url>
-    <tag>jena-4.5.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
-   <properties>
+  <properties>
+     <!-- CI-friendly build variables. See: https://maven.apache.org/maven-ci-friendly.html -->
+     <revision>4.6.0</revision>
+     <changelist>-SNAPSHOT</changelist>
+     <sha1/>
+
      <!-- Build -->
     <java.version>11</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.outputTimestamp>2022-05-01T13:36:04Z</project.build.outputTimestamp>
 
     <!-- Testing -->
-    <ver.junit>4.13.2</ver.junit>  
+    <ver.junit>4.13.2</ver.junit>
     <ver.mockito>4.4.0</ver.mockito>
     <ver.awaitility>4.1.1</ver.awaitility>
     <ver.contract.tests>0.2.0</ver.contract.tests>
@@ -111,7 +116,6 @@
     <!--- GeoSPARQL related -->
     <ver.jcommander>1.82</ver.jcommander>
     <ver.sis>1.1</ver.sis>
-
   </properties>
 
   <issueManagement>
@@ -780,11 +784,11 @@
         <version>1.0.4</version>
         <exclusions>
           <exclusion>
-            <groupId>org.apache.jena</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>jena-tdb</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>org.apache.jena</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>jena-tdb2</artifactId>
           </exclusion>
           <exclusion>
@@ -806,13 +810,242 @@
 
       <!-- END jena geosparql -->
 
+      <!-- jena projects -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shaded-guava</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-iri</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- jena-core -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-core</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-core</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <!-- jena-base -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-base</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-base</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>apache-jena-libs</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+
+      <!-- jena-arq -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-arq</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-arq</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-arq</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <!-- jena-shacl -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shacl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shacl</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shacl</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <!-- jena-shex -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shex</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-shex</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-tdb</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-tdb2</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- jena-rdfconnection -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-rdfconnection</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-rdfconnection</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-rdfconnection</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <!-- jena-cmds -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-cmds</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-cmds</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-cmds</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+
+      <!-- jena-fuseki-core -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-core</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+
+      <!-- jena-fuseki-main -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-main</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-main</artifactId>
+        <version>${project.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
+
+      <!-- jena-fuseki-ui -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-ui</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-geosparql</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-text</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>jena-querybuilder</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- END jena projects -->
+
     </dependencies>
 
   </dependencyManagement>
 
   <build>
-    <!-- Run the enforcer plugin automatically at compile time -->
     <plugins>
+      <!-- Flatten pom.xml files with ${revision} placeholder as described in
+           https://maven.apache.org/maven-ci-friendly.html#install-deploy -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.2.5</version>
+        <configuration>
+          <updatePomFile>true</updatePomFile>
+          <flattenMode>resolveCiFriendliesOnly</flattenMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Run the enforcer plugin automatically at compile time -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>

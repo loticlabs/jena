@@ -21,13 +21,12 @@
 
   <name>Apache Jena - Fuseki Binary Distribution</name>
   <artifactId>apache-jena-fuseki</artifactId>
-  <version>4.5.0</version>
   <packaging>pom</packaging>
 
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena-fuseki</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent> 
   
@@ -36,15 +35,13 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-fulljar</artifactId>
-      <version>${project.version}</version>
     </dependency>
     
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-war</artifactId>
-      <version>${project.version}</version>
       <type>war</type>
     </dependency>
 
@@ -75,7 +72,4 @@
 
   </build>
 
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

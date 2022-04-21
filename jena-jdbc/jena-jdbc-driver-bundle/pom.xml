@@ -22,7 +22,7 @@
 	<parent>
 		<groupId>org.apache.jena</groupId>
 		<artifactId>jena-jdbc</artifactId>
-		<version>4.5.0</version>
+		<version>${revision}${sha1}${changelist}</version>
 	</parent>
 	<artifactId>jena-jdbc-driver-bundle</artifactId>
 	<name>Apache Jena - JDBC Driver Bundle</name>
@@ -44,19 +44,16 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-mem</artifactId>
-			<version>4.5.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-remote</artifactId>
-			<version>4.5.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-tdb</artifactId>
-			<version>4.5.0</version>
 		</dependency>
 
 		<!-- Test Dependencies -->
@@ -66,37 +63,32 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-mem</artifactId>
-			<version>4.5.0</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-remote</artifactId>
-			<version>4.5.0</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-driver-tdb</artifactId>
-			<version>4.5.0</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-core</artifactId>
-			<version>4.5.0</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-fuseki-main</artifactId>
-			<version>4.5.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -141,7 +133,7 @@
 					<includeDependencySources>true</includeDependencySources>
 					<includeTransitiveDependencySources>true</includeTransitiveDependencySources>
 					<dependencySourceIncludes>
-						<dependencySourceInclude>org.apache.jena:jena-jdbc*</dependencySourceInclude>
+						<dependencySourceInclude>${project.groupId}:jena-jdbc*</dependencySourceInclude>
 					</dependencySourceIncludes>
 
 					<groups>
@@ -174,8 +166,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

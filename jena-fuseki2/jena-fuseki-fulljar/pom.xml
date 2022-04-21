@@ -25,8 +25,8 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena-fuseki</artifactId>
-    <version>4.5.0</version>
-    <relativePath>../</relativePath>
+    <version>${revision}${sha1}${changelist}</version>
+    <relativePath>..</relativePath>
   </parent> 
 
   <packaging>jar</packaging>
@@ -35,9 +35,8 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-fuseki-webapp</artifactId>
-      <version>${project.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.logging.log4j</groupId>
@@ -51,9 +50,8 @@
          as a convenience in deployments.
     -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -126,8 +124,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
+  
 </project>

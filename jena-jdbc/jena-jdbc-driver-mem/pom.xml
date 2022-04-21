@@ -22,7 +22,8 @@
 	<parent>
 		<groupId>org.apache.jena</groupId>
 		<artifactId>jena-jdbc</artifactId>
-		<version>4.5.0</version>
+		<version>${revision}${sha1}${changelist}</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>jena-jdbc-driver-mem</artifactId>
 	<name>Apache Jena - JDBC In-Memory Driver</name>
@@ -35,16 +36,14 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-core</artifactId>
-			<version>4.5.0</version>
 		</dependency>
 
 		<!-- Test Dependencies -->
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-jdbc-core</artifactId>
-			<version>4.5.0</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
@@ -92,8 +91,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

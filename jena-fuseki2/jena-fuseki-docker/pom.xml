@@ -21,13 +21,12 @@
 
   <name>Apache Jena - Fuseki Docker Tools</name>
   <artifactId>jena-fuseki-docker</artifactId>
-  <version>4.5.0</version>
   <packaging>pom</packaging>
 
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena-fuseki</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent> 
   
@@ -59,7 +58,4 @@
 
   </build>
 
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

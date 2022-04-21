@@ -22,7 +22,8 @@
 	<parent>
 		<groupId>org.apache.jena</groupId>
 		<artifactId>jena-jdbc</artifactId>
-		<version>4.5.0</version>
+		<version>${revision}${sha1}${changelist}</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>jena-jdbc-core</artifactId>
 	<name>Apache Jena - JDBC Core API</name>
@@ -35,9 +36,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-arq</artifactId>
-			<version>4.5.0</version>
 		</dependency>
     
 		<dependency>
@@ -106,8 +106,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  <scm>
-    <tag>jena-4.5.0</tag>
-  </scm>
 </project>

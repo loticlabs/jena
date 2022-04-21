@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.apache.jena</groupId>
     <artifactId>jena</artifactId>
-    <version>4.5.0</version>
+    <version>${revision}${sha1}${changelist}</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -37,34 +37,29 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-tdb</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-tdb2</artifactId>
-      <version>4.5.0</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-cmds</artifactId>
-      <version>4.5.0</version>
     </dependency>
     
     <!-- Testing support -->
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>jena-base</artifactId>
-      <version>4.5.0</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
