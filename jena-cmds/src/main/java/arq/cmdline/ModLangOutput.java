@@ -23,7 +23,7 @@ import java.util.HashSet ;
 import java.util.Set ;
 
 import org.apache.jena.cmd.*;
-import org.apache.jena.ext.com.google.common.base.Objects;
+import com.google.common.base.Objects;
 import org.apache.jena.riot.Lang ;
 import org.apache.jena.riot.RDFFormat ;
 import org.apache.jena.riot.RDFLanguages ;

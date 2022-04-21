@@ -39,8 +39,8 @@ import org.apache.jena.dboe.base.block.Block;
 import org.apache.jena.dboe.base.block.BlockException;
 import org.apache.jena.dboe.base.block.BlockMgr;
 import org.apache.jena.dboe.base.block.BlockMgrTracker;
-import org.apache.jena.ext.com.google.common.collect.HashMultiset;
-import org.apache.jena.ext.com.google.common.collect.Multiset;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

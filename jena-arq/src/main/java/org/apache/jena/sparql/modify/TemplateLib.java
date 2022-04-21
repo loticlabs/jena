@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream ;
 
 import org.apache.jena.atlas.iterator.Iter;
-import org.apache.jena.ext.com.google.common.collect.Iterators;
+import com.google.common.collect.Iterators;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 import org.apache.jena.graph.Triple;

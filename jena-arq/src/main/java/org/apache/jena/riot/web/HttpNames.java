@@ -21,7 +21,7 @@ package org.apache.jena.riot.web;
 public class HttpNames
 {
     // Switch to org.apache.http.HttpHeaders
-    // or org.apache.jena.ext.com.google.common.net
+    // or com.google.common.net
     public static final String hAccept              = "Accept" ;
     public static final String hAcceptCharset       = "Accept-Charset" ;
     public static final String hAcceptRanges        = "Accept-Ranges" ;

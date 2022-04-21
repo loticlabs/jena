@@ -39,7 +39,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.atlas.io.IO;
-import org.apache.jena.ext.com.google.common.collect.Multimap;
+import com.google.common.collect.Multimap;
 import org.apache.jena.fuseki.system.FusekiNetLib;
 
 /** Dump the HTTP request */

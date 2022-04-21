@@ -43,11 +43,10 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
-      <artifactId>jena-shaded-guava</artifactId>
-      <version>${project.version}</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
     </dependency>
-    
+
     <!-- For compiling the log4j2 helper code. -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>

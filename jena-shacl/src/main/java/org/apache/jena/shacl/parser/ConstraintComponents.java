@@ -24,8 +24,8 @@ import static org.apache.jena.shacl.lib.ShLib.displayStr;
 import java.util.*;
 
 import org.apache.jena.atlas.logging.Log;
-import org.apache.jena.ext.com.google.common.collect.ArrayListMultimap;
-import org.apache.jena.ext.com.google.common.collect.Multimap;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.riot.other.G;

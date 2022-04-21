@@ -18,7 +18,7 @@
 
 package org.apache.jena.sparql.core.mem;
 
-import static org.apache.jena.ext.com.google.common.collect.ImmutableSet.of;
+import static com.google.common.collect.ImmutableSet.of;
 import static org.apache.jena.graph.Node.ANY;
 import static org.apache.jena.sparql.core.mem.TripleTableForm.*;
 import static org.apache.jena.sparql.core.mem.TupleSlot.*;

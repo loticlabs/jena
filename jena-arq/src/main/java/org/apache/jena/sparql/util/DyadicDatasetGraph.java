@@ -21,7 +21,7 @@ package org.apache.jena.sparql.util;
 import static java.util.Objects.requireNonNull;
 import static org.apache.jena.atlas.iterator.Iter.count;
 import static org.apache.jena.atlas.iterator.Iter.map;
-import static org.apache.jena.ext.com.google.common.collect.Iterators.concat;
+import static com.google.common.collect.Iterators.concat;
 import static org.apache.jena.graph.Node.ANY;
 import static org.apache.jena.query.TxnType.READ;
 import static org.apache.jena.sparql.core.Quad.defaultGraphIRI;
