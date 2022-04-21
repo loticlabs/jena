@@ -23,7 +23,7 @@ import java.util.concurrent.Callable;
 
 import org.apache.commons.codec.digest.MurmurHash3;
 import org.apache.jena.atlas.lib.*;
-import org.apache.jena.ext.com.google.common.hash.Hashing;
+import com.google.common.hash.Hashing;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
 

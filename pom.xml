@@ -92,7 +92,7 @@
     <ver.httpclient>4.5.13</ver.httpclient>
     <ver.httpcore>4.4.15</ver.httpcore>
 
-    <ver.shaded-guava>31.1-jre</ver.shaded-guava>
+    <ver.guava>31.1-jre</ver.guava>
     <ver.gson>2.9.1</ver.gson>
     <ver.commonsio>2.11.0</ver.commonsio>
     <ver.commonscli>1.5.0</ver.commonscli>
@@ -168,7 +168,6 @@
       -->
       <id>dev</id>
       <modules>
-        <module>jena-shaded-guava</module>
         <module>jena-iri</module>
         <module>jena-base</module>
         
@@ -225,7 +224,6 @@
       </activation>
       <modules>
         <!-- Basic modules -->
-        <module>jena-shaded-guava</module>
         <module>jena-iri</module>
         <module>jena-base</module>
 
@@ -278,6 +276,12 @@
         <artifactId>junit</artifactId>
         <version>${ver.junit}</version>
         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${ver.guava}</version>
       </dependency>
 
       <dependency>

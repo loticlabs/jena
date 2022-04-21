@@ -19,7 +19,7 @@
 package org.apache.jena.sparql.core.mem;
 
 import static java.util.stream.Collectors.toSet;
-import static org.apache.jena.ext.com.google.common.collect.ImmutableSet.of;
+import static com.google.common.collect.ImmutableSet.of;
 import static org.apache.jena.graph.Node.ANY;
 import static org.apache.jena.graph.NodeFactory.createBlankNode;
 import static org.apache.jena.sparql.core.mem.TupleSlot.*;

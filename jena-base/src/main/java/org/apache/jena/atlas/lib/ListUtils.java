@@ -125,7 +125,7 @@ public class ListUtils
      * out of heap memory.
      *
      * See also
-     * {@code org.apache.jena.ext.com.google.common.collect.Collections2#permutations}
+     * {@code com.google.common.collect.Collections2#permutations}
      */
     static public <T> List<List<T>> permute(List<T> c) {
         if ( c.size() > 5 ) {

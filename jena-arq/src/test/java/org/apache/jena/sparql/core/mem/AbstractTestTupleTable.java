@@ -19,7 +19,7 @@
 package org.apache.jena.sparql.core.mem;
 
 import static java.util.stream.Collectors.toSet;
-import static org.apache.jena.ext.com.google.common.collect.ImmutableSet.of;
+import static com.google.common.collect.ImmutableSet.of;
 import static org.apache.jena.query.ReadWrite.READ;
 import static org.apache.jena.query.ReadWrite.WRITE;
 import static org.junit.Assert.assertEquals ;
@@ -28,7 +28,7 @@ import static org.junit.Assert.assertTrue ;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import org.apache.jena.ext.com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableSet;
 import org.junit.Test;
 
 public abstract class AbstractTestTupleTable<TupleType, TupleTableType extends TupleTable<TupleType>> {

@@ -25,7 +25,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList ;
 import java.util.List ;
 
-import org.apache.jena.ext.com.google.common.collect.Iterators ;
+import com.google.common.collect.Iterators ;
 import org.junit.Test ;
 
 public class TestIteratorPeek

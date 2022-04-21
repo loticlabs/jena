@@ -20,12 +20,12 @@ package org.apache.jena.riot.system;
 
 import java.util.concurrent.ExecutionException ;
 
-import org.apache.jena.ext.com.google.common.cache.Cache ;
+import com.google.common.cache.Cache ;
 import org.apache.jena.atlas.lib.cache.CacheInfo ;
 import org.apache.jena.datatypes.RDFDatatype ;
 import org.apache.jena.datatypes.xsd.XSDDatatype ;
-import org.apache.jena.ext.com.google.common.cache.CacheBuilder ;
-import org.apache.jena.ext.com.google.common.cache.CacheStats ;
+import com.google.common.cache.CacheBuilder ;
+import com.google.common.cache.CacheStats ;
 import org.apache.jena.graph.Node ;
 import org.apache.jena.riot.RiotException ;
 import org.apache.jena.riot.lang.LabelToNode ;

@@ -20,7 +20,7 @@ package org.apache.jena.tdb2.loader.main;
 
 import java.util.List;
 
-import org.apache.jena.ext.com.google.common.collect.Lists;
+import com.google.common.collect.Lists;
 import org.apache.jena.tdb2.loader.base.BulkStartFinish;
 
 public class BulkProcesses {

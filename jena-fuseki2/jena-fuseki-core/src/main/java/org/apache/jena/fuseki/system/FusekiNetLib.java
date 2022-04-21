@@ -25,8 +25,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.jena.atlas.web.ContentType;
 import org.apache.jena.atlas.web.WebLib;
-import org.apache.jena.ext.com.google.common.collect.ArrayListMultimap;
-import org.apache.jena.ext.com.google.common.collect.Multimap;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import org.apache.jena.fuseki.FusekiException;
 import org.apache.jena.fuseki.servlets.HttpAction;
 import org.apache.jena.graph.Graph;

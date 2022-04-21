@@ -19,7 +19,7 @@
 package org.apache.jena.shacl.engine.constraint;
 
 import org.apache.jena.atlas.logging.Log;
-import org.apache.jena.ext.com.google.common.collect.Multimap;
+import com.google.common.collect.Multimap;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;

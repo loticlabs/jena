@@ -24,8 +24,8 @@ import java.util.ArrayList ;
 import java.util.Iterator ;
 import java.util.List ;
 
-import org.apache.jena.ext.com.google.common.collect.HashMultiset;
-import org.apache.jena.ext.com.google.common.collect.Multiset;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 import org.apache.jena.atlas.lib.Pair ;
 import org.apache.jena.tdb.TDBException ;
 import org.slf4j.Logger ;
