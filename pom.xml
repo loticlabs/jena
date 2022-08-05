@@ -52,8 +52,8 @@
 
   <properties>
      <!-- CI-friendly build variables. See: https://maven.apache.org/maven-ci-friendly.html -->
-     <revision>4.6.0</revision>
-     <changelist>-SNAPSHOT</changelist>
+     <revision>4.5.0-lotic</revision>
+     <changelist/>
      <sha1/>
 
      <!-- Build -->
@@ -268,6 +268,23 @@
         <module>jena-jdbc</module>
 
       </modules>
+    </profile>
+
+    <profile>
+      <!-- Deploy to Lotic Bintray -->
+      <id>lotic</id>
+      <distributionManagement>
+        <repository>
+          <id>lotic-releases</id>
+          <name>Lotic Labs Release (Local) Repository</name>
+          <url>https://lotic.jfrog.io/artifactory/maven-releases-local</url>
+        </repository>
+        <snapshotRepository>
+          <id>lotic-snapshots</id>
+          <name>Lotic Labs Release (Local) Repository</name>
+          <url>https://lotic.jfrog.io/artifactory/maven-snapshots-local</url>
+        </snapshotRepository>
+      </distributionManagement>
     </profile>
 
   </profiles>

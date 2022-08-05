@@ -104,6 +104,12 @@
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
+        <artifactId>jena-fuseki-ui</artifactId>
+        <version>${project.version}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>jena-fuseki-war</artifactId>
         <version>${project.version}</version>
         <type>war</type>
